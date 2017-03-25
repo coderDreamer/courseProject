@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <login.h>
 
 namespace Ui {
 class Widget;
