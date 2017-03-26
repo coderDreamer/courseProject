@@ -30,9 +30,9 @@ public:
     QLabel *label;
     QHBoxLayout *horizontalLayout;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QPushButton *login_button;
+    QPushButton *registration_button;
+    QPushButton *exit_button;
 
     void setupUi(QWidget *Widget)
     {
@@ -70,21 +70,21 @@ public:
         horizontalLayout_2->setSpacing(5);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(-1, -1, -1, 40);
-        pushButton = new QPushButton(Widget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setAutoFillBackground(false);
+        login_button = new QPushButton(Widget);
+        login_button->setObjectName(QStringLiteral("login_button"));
+        login_button->setAutoFillBackground(false);
 
-        horizontalLayout_2->addWidget(pushButton);
+        horizontalLayout_2->addWidget(login_button);
 
-        pushButton_2 = new QPushButton(Widget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        registration_button = new QPushButton(Widget);
+        registration_button->setObjectName(QStringLiteral("registration_button"));
 
-        horizontalLayout_2->addWidget(pushButton_2);
+        horizontalLayout_2->addWidget(registration_button);
 
-        pushButton_3 = new QPushButton(Widget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        exit_button = new QPushButton(Widget);
+        exit_button->setObjectName(QStringLiteral("exit_button"));
 
-        horizontalLayout_2->addWidget(pushButton_3);
+        horizontalLayout_2->addWidget(exit_button);
 
 
         horizontalLayout->addLayout(horizontalLayout_2);
@@ -97,7 +97,6 @@ public:
 
 
         retranslateUi(Widget);
-        QObject::connect(pushButton, SIGNAL(clicked(bool)), pushButton, SLOT(repaint()));
 
         QMetaObject::connectSlotsByName(Widget);
     } // setupUi
@@ -106,9 +105,9 @@ public:
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", 0));
         label->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\321\200\320\276 \320\277\320\276\320\266\320\260\320\273\320\276\320\262\320\260\321\202\321\214!", 0));
-        pushButton->setText(QApplication::translate("Widget", "\320\222\320\236\320\231\320\242\320\230", 0));
-        pushButton_2->setText(QApplication::translate("Widget", "\320\240\320\225\320\223\320\230\320\241\320\242\320\240\320\220\320\246\320\230\320\257", 0));
-        pushButton_3->setText(QApplication::translate("Widget", "\320\222\320\253\320\245\320\236\320\224", 0));
+        login_button->setText(QApplication::translate("Widget", "\320\222\320\236\320\231\320\242\320\230", 0));
+        registration_button->setText(QApplication::translate("Widget", "\320\240\320\225\320\223\320\230\320\241\320\242\320\240\320\220\320\246\320\230\320\257", 0));
+        exit_button->setText(QApplication::translate("Widget", "\320\222\320\253\320\245\320\236\320\224", 0));
     } // retranslateUi
 
 };

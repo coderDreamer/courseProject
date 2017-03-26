@@ -79,7 +79,7 @@ font-weight: bold;</string>
           <number>40</number>
          </property>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="login_button">
            <property name="autoFillBackground">
             <bool>false</bool>
            </property>
@@ -89,14 +89,14 @@ font-weight: bold;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="registration_button">
            <property name="text">
             <string>РЕГИСТРАЦИЯ</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="exit_button">
            <property name="text">
             <string>ВЫХОД</string>
            </property>

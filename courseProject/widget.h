@@ -2,7 +2,9 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include <login.h>
+#include <login_form.h>
+#include <register_form.h>
+#include <QPushButton>
 
 namespace Ui {
 class Widget;
@@ -14,10 +16,16 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget *parent = 0);
-    ~Widget();
+    ~Widget();  
+
+private slots:
+    void transfer_login();
+    void transfer_register();
 
 private:
     Ui::Widget *ui;
+    Login_Form *LoginWindow;
+    Register_Form *RegisterWindow;
 };
 
 #endif // WIDGET_H
