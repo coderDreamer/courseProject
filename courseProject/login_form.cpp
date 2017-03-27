@@ -36,7 +36,8 @@ Login_Form::Login_Form(QWidget *parent) :
     QString email = query.value(5).toString();
     QString login = query.value(6).toString();
 
-    ui->textEdit->insertPlainText(id + "\n" + name + "\n" + last_name + "\n" + faculty + "\n" + group_name + "\n" + email + "\n" + login + "\n");
+    ui->textEdit->insertPlainText(id + "\n" + name + "\n" + last_name + "\n" + faculty +
+                                       "\n" + group_name + "\n" + email + "\n" + login + "\n");
     }
     connect(ui->login_enter, SIGNAL(clicked(bool)),
     ui->textEdit, SLOT(clear()));
@@ -49,11 +50,7 @@ Login_Form::Login_Form(QWidget *parent) :
 
  }
 
-
-
-
-
-
+// Functions for buttons
 void Login_Form::transfer_login() {
     this->close();
     emit LoginWindow();

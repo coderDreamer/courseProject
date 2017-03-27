@@ -20,6 +20,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -39,13 +40,14 @@ public:
     QLabel *label_6;
     QLabel *label_7;
     QVBoxLayout *verticalLayout_2;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit_5;
-    QLineEdit *lineEdit_6;
-    QLineEdit *lineEdit_7;
+    QLineEdit *nameLine;
+    QLineEdit *lastnameLine;
+    QLineEdit *facultyLine;
+    QLineEdit *groupLine;
+    QLineEdit *emailLine;
+    QLineEdit *loginLine;
+    QLineEdit *passwordLine;
+    QTextEdit *newEdit;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *register_button;
@@ -55,7 +57,7 @@ public:
     {
         if (Register_Form->objectName().isEmpty())
             Register_Form->setObjectName(QStringLiteral("Register_Form"));
-        Register_Form->resize(320, 362);
+        Register_Form->resize(320, 394);
         verticalLayout_3 = new QVBoxLayout(Register_Form);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(-1, -1, -1, 25);
@@ -108,46 +110,51 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        lineEdit = new QLineEdit(Register_Form);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        nameLine = new QLineEdit(Register_Form);
+        nameLine->setObjectName(QStringLiteral("nameLine"));
 
-        verticalLayout_2->addWidget(lineEdit);
+        verticalLayout_2->addWidget(nameLine);
 
-        lineEdit_2 = new QLineEdit(Register_Form);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lastnameLine = new QLineEdit(Register_Form);
+        lastnameLine->setObjectName(QStringLiteral("lastnameLine"));
 
-        verticalLayout_2->addWidget(lineEdit_2);
+        verticalLayout_2->addWidget(lastnameLine);
 
-        lineEdit_3 = new QLineEdit(Register_Form);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        facultyLine = new QLineEdit(Register_Form);
+        facultyLine->setObjectName(QStringLiteral("facultyLine"));
 
-        verticalLayout_2->addWidget(lineEdit_3);
+        verticalLayout_2->addWidget(facultyLine);
 
-        lineEdit_4 = new QLineEdit(Register_Form);
-        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        groupLine = new QLineEdit(Register_Form);
+        groupLine->setObjectName(QStringLiteral("groupLine"));
 
-        verticalLayout_2->addWidget(lineEdit_4);
+        verticalLayout_2->addWidget(groupLine);
 
-        lineEdit_5 = new QLineEdit(Register_Form);
-        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+        emailLine = new QLineEdit(Register_Form);
+        emailLine->setObjectName(QStringLiteral("emailLine"));
 
-        verticalLayout_2->addWidget(lineEdit_5);
+        verticalLayout_2->addWidget(emailLine);
 
-        lineEdit_6 = new QLineEdit(Register_Form);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        loginLine = new QLineEdit(Register_Form);
+        loginLine->setObjectName(QStringLiteral("loginLine"));
 
-        verticalLayout_2->addWidget(lineEdit_6);
+        verticalLayout_2->addWidget(loginLine);
 
-        lineEdit_7 = new QLineEdit(Register_Form);
-        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+        passwordLine = new QLineEdit(Register_Form);
+        passwordLine->setObjectName(QStringLiteral("passwordLine"));
 
-        verticalLayout_2->addWidget(lineEdit_7);
+        verticalLayout_2->addWidget(passwordLine);
 
 
         horizontalLayout->addLayout(verticalLayout_2);
 
 
         verticalLayout_3->addLayout(horizontalLayout);
+
+        newEdit = new QTextEdit(Register_Form);
+        newEdit->setObjectName(QStringLiteral("newEdit"));
+
+        verticalLayout_3->addWidget(newEdit);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -168,6 +175,7 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout_2);
 
+        newEdit->raise();
 
         retranslateUi(Register_Form);
 

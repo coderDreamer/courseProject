@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>320</width>
-    <height>362</height>
+    <height>394</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -91,29 +91,32 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="nameLine"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="lastnameLine"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="facultyLine"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_4"/>
+        <widget class="QLineEdit" name="groupLine"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_5"/>
+        <widget class="QLineEdit" name="emailLine"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_6"/>
+        <widget class="QLineEdit" name="loginLine"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_7"/>
+        <widget class="QLineEdit" name="passwordLine"/>
        </item>
       </layout>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QTextEdit" name="newEdit"/>
    </item>
    <item>
     <spacer name="verticalSpacer">
@@ -149,6 +152,7 @@
   </layout>
   <zorder>verticalSpacer</zorder>
   <zorder>verticalSpacer_2</zorder>
+  <zorder>newEdit</zorder>
  </widget>
  <resources/>
  <connections/>

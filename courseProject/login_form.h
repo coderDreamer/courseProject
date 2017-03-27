@@ -2,6 +2,7 @@
 #define LOGIN_FORM_H
 
 #include <QDialog>
+#include <QtSql>
 
 namespace Ui {
 class Login_Form;
@@ -26,6 +27,7 @@ private slots:
 
 private:
     Ui::Login_Form *ui;
+
 };
 
 #endif // LOGIN_FORM_H
