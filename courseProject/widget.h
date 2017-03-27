@@ -19,13 +19,13 @@ public:
     ~Widget();  
 
 private slots:
-    void transfer_register();
     void on_login_button_clicked(); // Slot for LogIn button on the Welcome Window
+    void on_register_button_clicked(); // Slot for Register button on the Welcome Window
 
 private:
     Ui::Widget *ui;
-    Register_Form *RegisterWindow;
     Login_Form *loginWindow; //LogIn Window
+    Register_Form *registerWindow; // Registration Window
 };
 
 #endif // WIDGET_H

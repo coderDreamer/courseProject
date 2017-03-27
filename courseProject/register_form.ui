@@ -54,14 +54,14 @@
        <item>
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Группа:</string>
+          <string>Факультет:</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>Факультет:</string>
+          <string>Группа:</string>
          </property>
         </widget>
        </item>
@@ -131,7 +131,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="back_button">
+      <widget class="QPushButton" name="register_button">
        <property name="text">
         <string>Назад</string>
        </property>
@@ -147,23 +147,6 @@
     </layout>
    </item>
   </layout>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label_5</zorder>
-  <zorder>label_6</zorder>
-  <zorder>label_7</zorder>
-  <zorder>lineEdit</zorder>
-  <zorder>lineEdit_2</zorder>
-  <zorder>lineEdit_3</zorder>
-  <zorder>lineEdit_4</zorder>
-  <zorder>lineEdit_5</zorder>
-  <zorder>lineEdit_6</zorder>
-  <zorder>lineEdit_7</zorder>
-  <zorder></zorder>
-  <zorder>back_button</zorder>
-  <zorder>enter_button</zorder>
   <zorder>verticalSpacer</zorder>
   <zorder>verticalSpacer_2</zorder>
  </widget>

@@ -16,10 +16,10 @@ public:
     ~Register_Form();
 
 signals:
-    void RegisterWindow();
+    void WelcomeWindow();
 
 private slots:
-    void transfer_register();
+    void on_register_button_clicked();
 
 private:
     Ui::Register_Form *ui;

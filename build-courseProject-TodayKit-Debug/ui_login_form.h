@@ -21,6 +21,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -35,6 +36,7 @@ public:
     QLineEdit *login_field;
     QLabel *label_2;
     QLineEdit *password_field;
+    QTextEdit *textEdit;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
     QPushButton *login_button;
@@ -82,6 +84,11 @@ public:
 
 
         verticalLayout->addLayout(formLayout);
+
+        textEdit = new QTextEdit(Login_Form);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+
+        verticalLayout->addWidget(textEdit);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 

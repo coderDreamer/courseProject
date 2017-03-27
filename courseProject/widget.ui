@@ -89,7 +89,7 @@ font-weight: bold;</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="registration_button">
+          <widget class="QPushButton" name="register_button">
            <property name="text">
             <string>РЕГИСТРАЦИЯ</string>
            </property>

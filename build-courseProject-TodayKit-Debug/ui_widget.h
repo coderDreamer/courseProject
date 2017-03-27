@@ -31,7 +31,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *login_button;
-    QPushButton *registration_button;
+    QPushButton *register_button;
     QPushButton *exit_button;
 
     void setupUi(QWidget *Widget)
@@ -76,10 +76,10 @@ public:
 
         horizontalLayout_2->addWidget(login_button);
 
-        registration_button = new QPushButton(Widget);
-        registration_button->setObjectName(QStringLiteral("registration_button"));
+        register_button = new QPushButton(Widget);
+        register_button->setObjectName(QStringLiteral("register_button"));
 
-        horizontalLayout_2->addWidget(registration_button);
+        horizontalLayout_2->addWidget(register_button);
 
         exit_button = new QPushButton(Widget);
         exit_button->setObjectName(QStringLiteral("exit_button"));
@@ -106,7 +106,7 @@ public:
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", 0));
         label->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\321\200\320\276 \320\277\320\276\320\266\320\260\320\273\320\276\320\262\320\260\321\202\321\214!", 0));
         login_button->setText(QApplication::translate("Widget", "\320\222\320\236\320\231\320\242\320\230", 0));
-        registration_button->setText(QApplication::translate("Widget", "\320\240\320\225\320\223\320\230\320\241\320\242\320\240\320\220\320\246\320\230\320\257", 0));
+        register_button->setText(QApplication::translate("Widget", "\320\240\320\225\320\223\320\230\320\241\320\242\320\240\320\220\320\246\320\230\320\257", 0));
         exit_button->setText(QApplication::translate("Widget", "\320\222\320\253\320\245\320\236\320\224", 0));
     } // retranslateUi
 

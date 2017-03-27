@@ -8,13 +8,14 @@ Register_Form::Register_Form(QWidget *parent) :
     ui->setupUi(this);
 }
 
-void Register_Form::transfer_register() {
-    this->close();
-    emit RegisterWindow();
-}
-
-
 Register_Form::~Register_Form()
 {
     delete ui;
+}
+
+
+void Register_Form::on_register_button_clicked()
+{
+    this->close();      // Закрываем окно
+    emit WelcomeWindow(); // И вызываем сигнал на открытие главного окна
 }

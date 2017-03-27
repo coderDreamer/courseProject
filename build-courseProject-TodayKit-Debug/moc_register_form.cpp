@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Register_Form_t {
     QByteArrayData data[4];
-    char stringdata0[48];
+    char stringdata0[56];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,13 +30,13 @@ struct qt_meta_stringdata_Register_Form_t {
 static const qt_meta_stringdata_Register_Form_t qt_meta_stringdata_Register_Form = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "Register_Form"
-QT_MOC_LITERAL(1, 14, 14), // "RegisterWindow"
-QT_MOC_LITERAL(2, 29, 0), // ""
-QT_MOC_LITERAL(3, 30, 17) // "transfer_register"
+QT_MOC_LITERAL(1, 14, 13), // "WelcomeWindow"
+QT_MOC_LITERAL(2, 28, 0), // ""
+QT_MOC_LITERAL(3, 29, 26) // "on_register_button_clicked"
 
     },
-    "Register_Form\0RegisterWindow\0\0"
-    "transfer_register"
+    "Register_Form\0WelcomeWindow\0\0"
+    "on_register_button_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -74,8 +74,8 @@ void Register_Form::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         Register_Form *_t = static_cast<Register_Form *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->RegisterWindow(); break;
-        case 1: _t->transfer_register(); break;
+        case 0: _t->WelcomeWindow(); break;
+        case 1: _t->on_register_button_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -83,7 +83,7 @@ void Register_Form::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         void **func = reinterpret_cast<void **>(_a[1]);
         {
             typedef void (Register_Form::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Register_Form::RegisterWindow)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&Register_Form::WelcomeWindow)) {
                 *result = 0;
                 return;
             }
@@ -129,7 +129,7 @@ int Register_Form::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Register_Form::RegisterWindow()
+void Register_Form::WelcomeWindow()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
