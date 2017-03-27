@@ -37,7 +37,7 @@ public:
     QLineEdit *password_field;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
-    QPushButton *back_button;
+    QPushButton *login_button;
     QPushButton *login_enter;
 
     void setupUi(QDialog *Login_Form)
@@ -89,10 +89,10 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        back_button = new QPushButton(Login_Form);
-        back_button->setObjectName(QStringLiteral("back_button"));
+        login_button = new QPushButton(Login_Form);
+        login_button->setObjectName(QStringLiteral("login_button"));
 
-        horizontalLayout->addWidget(back_button);
+        horizontalLayout->addWidget(login_button);
 
         login_enter = new QPushButton(Login_Form);
         login_enter->setObjectName(QStringLiteral("login_enter"));
@@ -113,7 +113,7 @@ public:
         Login_Form->setWindowTitle(QApplication::translate("Login_Form", "Dialog", 0));
         label->setText(QApplication::translate("Login_Form", "\320\233\320\276\320\263\320\270\320\275:", 0));
         label_2->setText(QApplication::translate("Login_Form", "\320\237\320\260\321\200\320\276\320\273\321\214:", 0));
-        back_button->setText(QApplication::translate("Login_Form", "\320\235\320\260\320\267\320\260\320\264", 0));
+        login_button->setText(QApplication::translate("Login_Form", "\320\235\320\260\320\267\320\260\320\264", 0));
         login_enter->setText(QApplication::translate("Login_Form", "\320\222\320\276\320\271\321\202\320\270", 0));
     } // retranslateUi
 

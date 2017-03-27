@@ -22,5 +22,8 @@ Login_Form::~Login_Form()
     delete ui;
 }
 
-
-
+void Login_Form::on_login_button_clicked()
+{
+    this->close();      // Закрываем окно
+    emit WelcomeWindow(); // И вызываем сигнал на открытие главного окна
+}

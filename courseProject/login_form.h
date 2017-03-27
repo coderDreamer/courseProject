@@ -17,9 +17,12 @@ public:
 
 signals:
     void LoginWindow();
+    void WelcomeWindow();  // Сигнал для первого окна на открытие
 
 private slots:
     void transfer_login();
+    // Слот-обработчик нажатия кнопки
+    void on_login_button_clicked();
 
 private:
     Ui::Login_Form *ui;

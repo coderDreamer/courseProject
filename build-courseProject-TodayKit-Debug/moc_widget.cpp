@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Widget_t {
     QByteArrayData data[4];
-    char stringdata0[41];
+    char stringdata0[50];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,12 +30,13 @@ struct qt_meta_stringdata_Widget_t {
 static const qt_meta_stringdata_Widget_t qt_meta_stringdata_Widget = {
     {
 QT_MOC_LITERAL(0, 0, 6), // "Widget"
-QT_MOC_LITERAL(1, 7, 14), // "transfer_login"
-QT_MOC_LITERAL(2, 22, 0), // ""
-QT_MOC_LITERAL(3, 23, 17) // "transfer_register"
+QT_MOC_LITERAL(1, 7, 17), // "transfer_register"
+QT_MOC_LITERAL(2, 25, 0), // ""
+QT_MOC_LITERAL(3, 26, 23) // "on_login_button_clicked"
 
     },
-    "Widget\0transfer_login\0\0transfer_register"
+    "Widget\0transfer_register\0\0"
+    "on_login_button_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -69,8 +70,8 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Widget *_t = static_cast<Widget *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->transfer_login(); break;
-        case 1: _t->transfer_register(); break;
+        case 0: _t->transfer_register(); break;
+        case 1: _t->on_login_button_clicked(); break;
         default: ;
         }
     }
