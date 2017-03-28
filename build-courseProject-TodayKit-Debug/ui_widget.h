@@ -105,9 +105,9 @@ public:
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", 0));
         label->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\321\200\320\276 \320\277\320\276\320\266\320\260\320\273\320\276\320\262\320\260\321\202\321\214!", 0));
-        login_button->setText(QApplication::translate("Widget", "\320\222\320\236\320\231\320\242\320\230", 0));
-        register_button->setText(QApplication::translate("Widget", "\320\240\320\225\320\223\320\230\320\241\320\242\320\240\320\220\320\246\320\230\320\257", 0));
-        exit_button->setText(QApplication::translate("Widget", "\320\222\320\253\320\245\320\236\320\224", 0));
+        login_button->setText(QApplication::translate("Widget", "\320\222\320\276\320\271\321\202\320\270", 0));
+        register_button->setText(QApplication::translate("Widget", "\320\240\320\265\320\263\320\270\321\201\321\202\321\200\320\260\321\206\320\270\321\217", 0));
+        exit_button->setText(QApplication::translate("Widget", "\320\222\321\213\321\205\320\276\320\264", 0));
     } // retranslateUi
 
 };

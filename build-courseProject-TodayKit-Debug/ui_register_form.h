@@ -20,7 +20,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -47,8 +46,8 @@ public:
     QLineEdit *emailLine;
     QLineEdit *loginLine;
     QLineEdit *passwordLine;
-    QTextEdit *newEdit;
-    QSpacerItem *verticalSpacer;
+    QSpacerItem *spacer_del;
+    QLabel *register_label;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *register_button;
     QPushButton *enter_button;
@@ -151,14 +150,21 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
-        newEdit = new QTextEdit(Register_Form);
-        newEdit->setObjectName(QStringLiteral("newEdit"));
+        spacer_del = new QSpacerItem(20, 50, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_3->addWidget(newEdit);
+        verticalLayout_3->addItem(spacer_del);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        register_label = new QLabel(Register_Form);
+        register_label->setObjectName(QStringLiteral("register_label"));
+        register_label->setEnabled(false);
+        register_label->setStyleSheet(QLatin1String("color: red;\n"
+"font-weight: bold;\n"
+"font-size: 13px;\n"
+"margin-bottom: 20px;"));
+        register_label->setAlignment(Qt::AlignCenter);
+        register_label->setMargin(0);
 
-        verticalLayout_3->addItem(verticalSpacer);
+        verticalLayout_3->addWidget(register_label);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
@@ -175,7 +181,7 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout_2);
 
-        newEdit->raise();
+        register_label->raise();
 
         retranslateUi(Register_Form);
 
@@ -185,15 +191,16 @@ public:
     void retranslateUi(QDialog *Register_Form)
     {
         Register_Form->setWindowTitle(QApplication::translate("Register_Form", "Dialog", 0));
-        label->setText(QApplication::translate("Register_Form", "\320\230\320\274\321\217:", 0));
-        label_2->setText(QApplication::translate("Register_Form", "\320\244\320\260\320\274\320\270\320\273\320\270\321\217:", 0));
-        label_3->setText(QApplication::translate("Register_Form", "\320\244\320\260\320\272\321\203\320\273\321\214\321\202\320\265\321\202:", 0));
-        label_4->setText(QApplication::translate("Register_Form", "\320\223\321\200\321\203\320\277\320\277\320\260:", 0));
-        label_5->setText(QApplication::translate("Register_Form", "\320\255\320\273. \320\277\320\276\321\207\321\202\320\260:", 0));
-        label_6->setText(QApplication::translate("Register_Form", "\320\233\320\276\320\263\320\270\320\275:", 0));
-        label_7->setText(QApplication::translate("Register_Form", "\320\237\320\260\321\200\320\276\320\273\321\214:", 0));
+        label->setText(QApplication::translate("Register_Form", "\320\230\320\274\321\217*:", 0));
+        label_2->setText(QApplication::translate("Register_Form", "\320\244\320\260\320\274\320\270\320\273\320\270\321\217*:", 0));
+        label_3->setText(QApplication::translate("Register_Form", "\320\244\320\260\320\272\321\203\320\273\321\214\321\202\320\265\321\202*:", 0));
+        label_4->setText(QApplication::translate("Register_Form", "\320\223\321\200\321\203\320\277\320\277\320\260*:", 0));
+        label_5->setText(QApplication::translate("Register_Form", "\320\255\320\273. \320\277\320\276\321\207\321\202\320\260*:", 0));
+        label_6->setText(QApplication::translate("Register_Form", "\320\233\320\276\320\263\320\270\320\275*:", 0));
+        label_7->setText(QApplication::translate("Register_Form", "\320\237\320\260\321\200\320\276\320\273\321\214*:", 0));
+        register_label->setText(QApplication::translate("Register_Form", "\320\240\320\265\320\263\320\270\321\201\321\202\321\200\320\260\321\206\320\270\321\217 \320\277\321\200\320\276\321\210\320\273\320\260 \321\203\321\201\320\277\320\265\321\210\320\275\320\276.", 0));
         register_button->setText(QApplication::translate("Register_Form", "\320\235\320\260\320\267\320\260\320\264", 0));
-        enter_button->setText(QApplication::translate("Register_Form", "\320\222\320\276\320\271\321\202\320\270", 0));
+        enter_button->setText(QApplication::translate("Register_Form", "\320\227\320\260\321\200\320\265\320\263\320\270\321\201\321\202\321\200\320\270\321\200\320\276\320\262\320\260\321\202\321\214", 0));
     } // retranslateUi
 
 };

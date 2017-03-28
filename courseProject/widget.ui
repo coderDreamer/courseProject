@@ -84,21 +84,21 @@ font-weight: bold;</string>
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>ВОЙТИ</string>
+            <string>Войти</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="register_button">
            <property name="text">
-            <string>РЕГИСТРАЦИЯ</string>
+            <string>Регистрация</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="exit_button">
            <property name="text">
-            <string>ВЫХОД</string>
+            <string>Выход</string>
            </property>
           </widget>
          </item>

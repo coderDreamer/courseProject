@@ -2,6 +2,7 @@
 #define REGISTER_FORM_H
 
 #include <QDialog>
+//#include <login_form.h>
 
 namespace Ui {
 class Register_Form;

@@ -15,6 +15,7 @@ class Login_Form : public QDialog
 public:
     explicit Login_Form(QWidget *parent = 0);
     ~Login_Form();
+    void DataBaseConnection();
 
 signals:
     void LoginWindow();
