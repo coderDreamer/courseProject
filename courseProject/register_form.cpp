@@ -1,6 +1,5 @@
 #include "register_form.h"
 #include "ui_register_form.h"
-//#include <login_form.h>
 #include <iostream>
 #include <QString>
 #include <string>
@@ -14,29 +13,23 @@ Register_Form::Register_Form(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     ui->register_label->hide();
 
     /*====================================================================
-    * Database stuff
+    * База Данных
     ====================================================================*/
 
-    // I need to exchange this DB connection stuff by one function which is common for the whole app
-    QSqlDatabase db;
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/ben/project/course/main_database");
-    if (!db.open()) {
-            qDebug() << "Error. Can't open the database...";
-        }
-    connect(ui->enter_button, SIGNAL (released()), this, SLOT (Registration()));
+    // через экземпляр класса вызываем метод для соединения с БД
+    loginFormObject.DataBaseConnection(); // соединение с БД
 
 
 
-
-
+    connect(ui->enter_button, SIGNAL (released()), this, SLOT (Registration())); // the function below
 
 
     /*====================================================================
-    * ---> the end of Database stuff
+    * ---> конец Базы Данных
     ====================================================================*/
 }
 
@@ -51,11 +44,13 @@ void Register_Form::on_register_button_clicked()
     this->close();
     emit WelcomeWindow();
 }
-    // Method for adding a new User into the Database
+    // Функция для создания новой записи в таблице students
     void Register_Form::Registration() {
 
-    QSqlQuery newUser_query;
-    // Read from the EditLine Widgets
+
+
+    QSqlQuery newUser_query, createTable;
+    // введеные в полях значения
     QString nameValue = ui->nameLine->text(),
             last_nameValue = ui->lastnameLine->text(),
             facultyValue = ui->facultyLine->text(),
@@ -63,25 +58,32 @@ void Register_Form::on_register_button_clicked()
             loginValue = ui->loginLine->text(),
             passwordValue = ui->passwordLine->text();
 
-    // Insert new student's data into out database
+    // вносим введенные значения полей в таблицу students
     newUser_query.exec("INSERT INTO students (name, last_name, faculty, email, login, password) "
                                 "VALUES ('"+nameValue+"', '"+last_nameValue+"', '"+facultyValue+"', "
                                         "'"+emailValue+"', '"+loginValue+"', '"+passwordValue+"')");
 
-    // Checking out if all of our fields are not empty.
+    // проверяем, все ли поля заполнены...
 
     if(nameValue.isEmpty() || last_nameValue.isEmpty() || facultyValue.isEmpty() || emailValue.isEmpty() ||
-                                loginValue.isEmpty() || passwordValue.isEmpty()) {
+                                loginValue.isEmpty() || passwordValue.isEmpty()) { // хотя бы одно пустое
         ui->register_label->setText("Заполните все поля");
         ui->register_label->show();
     }
-    else {
+    else { // иначе - регистрация прошла успешно
         ui->register_label->setText("Регистрация прошла успешно");
         ui->register_label->setStyleSheet("color: green; font-weight: bold; font-size: 13px;");
+        // появляется кнопка входа
         ui->enter_button->setText("Войти");
         ui->register_label->show();
     }
+    QString _USER_ = "_USER_"; // переменная для запроса
+    // создаем отдельную таблицу в БД для студента с названием _USER_ЛОГИН
+    createTable.exec("CREATE TABLE '"+_USER_ +loginValue+"' ( 'id' INTEGER PRIMARY KEY "
+                                                         "AUTOINCREMENT, 'pswd' TEXT, 'subjects' TEXT)");
+    createTable.exec("INSERT INTO '"+_USER_ +loginValue+"' (pswd) VALUES ('"+passwordValue+"')");
 
+    // (!) Нужно обработать случай, когда пользователь с таким логином уже существует
 
 
 }
