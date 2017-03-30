@@ -38,7 +38,7 @@ private slots:
     void transfer_login();
     // Слот-обработчик нажатия кнопки
     void on_login_button_clicked();
-    //void ifLoginCorrect();
+    void ifLoginCorrect();
 
 private:
     Ui::Login_Form *ui;
@@ -47,7 +47,8 @@ private:
     //QSqlQuery *databaseQuery, *countTableStrings;
     vector <QString> studentsDataVector = {}; // вектор, содержащий все данные из таблицы students
     int db_columns = 8, i = 0, recordsNumber = 0;
-
+    bool loginRight, pswdRight;
+    //QString bad = studentsDataVector[3];
 
 
 

@@ -67,13 +67,17 @@ Login_Form::Login_Form(QWidget *parent) :
     studentsDataVector.push_back(login);
     studentsDataVector.push_back(password);
 
-    // выводим весь вектор
-    ui->textEdit->insertPlainText("\n" + name + " " + last_name + " " + faculty +
-                             " " + group_name + " " + email + " " + login + " " + password + "\n");
+
+
+    // выводим всю таблицу
+    //ui->textEdit->insertPlainText("\n" + name + " " + last_name + " " + faculty +
+                            // " " + group_name + " " + email + " " + login + " " + password + "\n");
 
     }
     // проверка авторизации при нажатии на кнопку входа
-   // connect(ui->login_enter, SIGNAL (released()), this, SLOT (ifLoginCorrect()));
+    connect(ui->login_enter, SIGNAL (released()), this, SLOT (ifLoginCorrect()));
+
+
 
 }
     /*====================================================================
@@ -81,22 +85,31 @@ Login_Form::Login_Form(QWidget *parent) :
     ====================================================================*/
 
 // надо подумать над условием проверки, над всей функцией
-//void Login_Form::ifLoginCorrect() {
-//    vector<QString>::iterator it = studentsDataVector.begin();
-//    for(i = 0; i < recordsNumber * db_columns; i++) {
-//        if(studentsDataVector[i] == pswd_value) {
-//            for(it = studentsDataVector.begin(); it != studentsDataVector.end(); it++) {
-//                if(*it == login_value) {
-//                    ui->textEdit->insertPlainText("Success!");
-//                    advance(it, db_columns);
-//                }
-//               // else { ui->textEdit->insertPlainText("Condition doesn't work."); break; }
-//            }
+void Login_Form::ifLoginCorrect() {
+    //vector<QString>::iterator it = studentsDataVector.begin();
+//    for(i = 0; i < recordsNumber * db_columns; i++) { if(studentsDataVector[i] == login_value) { loginRight == true; break; }}
+//    for(i = 0; i < recordsNumber * db_columns; i++) { if(studentsDataVector[i] == pswd_value) { pswdRight == true; break; } }
 
-//        }
 
+//    if(loginRight == true && pswdRight == true ) {
+//        ui->textEdit->insertPlainText("Everything is ok");
 //    }
-//}
+//    else { ui->textEdit->insertPlainText("Incorrect condition probably"); }
+
+//   for(i = 0; i < recordsNumber * db_columns; i++) {
+//       QString newStr = studentsDataVector[i];
+//       ui->textEdit->insertPlainText(newStr + "\n");
+//   }
+
+//    if(studentsDataVector.empty()) { ui->textEdit->insertPlainText("Vector is empty"); }
+//    else { ui->textEdit->insertPlainText("Vector is FULL"); }
+
+    //if(studentsDataVector[1] == "Sergey") {ui->textEdit->insertPlainText("YES!");}
+
+
+    // ВЕКТОР ЗАПОЛНЕН РАЗРОЗНЕННО. ОТТАЛКИВАЙСЯ ОТ ЭТОГО. ВЫВЕДИ ЕГО НА КОНСОЛЬ.
+
+}
 
 
 

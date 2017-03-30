@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Login_Form_t {
-    QByteArrayData data[6];
-    char stringdata0[77];
+    QByteArrayData data[7];
+    char stringdata0[92];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,11 +34,13 @@ QT_MOC_LITERAL(1, 11, 11), // "LoginWindow"
 QT_MOC_LITERAL(2, 23, 0), // ""
 QT_MOC_LITERAL(3, 24, 13), // "WelcomeWindow"
 QT_MOC_LITERAL(4, 38, 14), // "transfer_login"
-QT_MOC_LITERAL(5, 53, 23) // "on_login_button_clicked"
+QT_MOC_LITERAL(5, 53, 23), // "on_login_button_clicked"
+QT_MOC_LITERAL(6, 77, 14) // "ifLoginCorrect"
 
     },
     "Login_Form\0LoginWindow\0\0WelcomeWindow\0"
-    "transfer_login\0on_login_button_clicked"
+    "transfer_login\0on_login_button_clicked\0"
+    "ifLoginCorrect"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +50,7 @@ static const uint qt_meta_data_Login_Form[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,18 +58,20 @@ static const uint qt_meta_data_Login_Form[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x06 /* Public */,
-       3,    0,   35,    2, 0x06 /* Public */,
+       1,    0,   39,    2, 0x06 /* Public */,
+       3,    0,   40,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   36,    2, 0x08 /* Private */,
-       5,    0,   37,    2, 0x08 /* Private */,
+       4,    0,   41,    2, 0x08 /* Private */,
+       5,    0,   42,    2, 0x08 /* Private */,
+       6,    0,   43,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -84,6 +88,7 @@ void Login_Form::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->WelcomeWindow(); break;
         case 2: _t->transfer_login(); break;
         case 3: _t->on_login_button_clicked(); break;
+        case 4: _t->ifLoginCorrect(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -132,13 +137,13 @@ int Login_Form::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
