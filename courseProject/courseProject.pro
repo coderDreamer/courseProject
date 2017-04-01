@@ -15,12 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         widget.cpp \
     login_form.cpp \
-    register_form.cpp
+    register_form.cpp \
+    user_window.cpp
 
 HEADERS  += widget.h \
     login_form.h \
-    register_form.h
+    register_form.h \
+    user_window.h
 
 FORMS    += widget.ui \
     login_form.ui \
-    register_form.ui
+    register_form.ui \
+    user_window.ui

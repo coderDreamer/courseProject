@@ -4,6 +4,8 @@
 #include <QString>
 #include <string>
 #include <QtSql>
+#include <QLineEdit>
+#include <QCheckBox>
 
 using namespace std;
 
@@ -81,7 +83,7 @@ void Register_Form::on_register_button_clicked()
     // создаем отдельную таблицу в БД для студента с названием _USER_ЛОГИН
     createTable.exec("CREATE TABLE '"+_USER_ +loginValue+"' ( 'id' INTEGER PRIMARY KEY "
                                                          "AUTOINCREMENT, 'pswd' TEXT, 'subjects' TEXT)");
-    createTable.exec("INSERT INTO '"+_USER_ +loginValue+"' (pswd) VALUES ('"+passwordValue+"')");
+    createTable.exec("INSERT INTO '"+_USER_ +loginValue+"' (pswd, login) VALUES ('"+passwordValue+"', '"+loginValue+"')");
 
     // (!) Нужно обработать случай, когда пользователь с таким логином уже существует
 

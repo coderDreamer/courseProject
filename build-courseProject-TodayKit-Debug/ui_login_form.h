@@ -37,6 +37,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *login_button;
     QPushButton *login_enter;
+    QPushButton *login_enter_correct;
 
     void setupUi(QDialog *Login_Form)
     {
@@ -71,6 +72,7 @@ public:
 
         password_field = new QLineEdit(Login_Form);
         password_field->setObjectName(QStringLiteral("password_field"));
+        password_field->setEchoMode(QLineEdit::Password);
 
         formLayout->setWidget(1, QFormLayout::FieldRole, password_field);
 
@@ -95,6 +97,11 @@ public:
 
         horizontalLayout->addWidget(login_enter);
 
+        login_enter_correct = new QPushButton(Login_Form);
+        login_enter_correct->setObjectName(QStringLiteral("login_enter_correct"));
+
+        horizontalLayout->addWidget(login_enter_correct);
+
 
         verticalLayout->addLayout(horizontalLayout);
 
@@ -111,7 +118,8 @@ public:
         label_2->setText(QApplication::translate("Login_Form", "\320\237\320\260\321\200\320\276\320\273\321\214:", 0));
         login_label->setText(QApplication::translate("Login_Form", "TextLabel", 0));
         login_button->setText(QApplication::translate("Login_Form", "\320\235\320\260\320\267\320\260\320\264", 0));
-        login_enter->setText(QApplication::translate("Login_Form", "\320\222\320\276\320\271\321\202\320\270", 0));
+        login_enter->setText(QApplication::translate("Login_Form", "\320\237\321\200\320\276\320\262\320\265\321\200\320\270\321\202\321\214", 0));
+        login_enter_correct->setText(QApplication::translate("Login_Form", "\320\222\320\276\320\271\321\202\320\270", 0));
     } // retranslateUi
 
 };

@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QtSql>
 #include <vector>
+#include <user_window.h>
 
 using namespace std;
 
@@ -41,6 +42,7 @@ private slots:
     // Слот-обработчик нажатия кнопки
     void on_login_button_clicked();
     void ifLoginCorrect();
+    void on_login_enter_correct_clicked(); // Нажатие на кнопку "Войти"
 
 private:
     Ui::Login_Form *ui;
@@ -49,9 +51,9 @@ private:
     //QSqlQuery *databaseQuery, *countTableStrings;
     QVector <QString> studentsDataVector = {}; // вектор, содержащий все данные из таблицы students
     int db_columns = 8, i = 0, recordsNumber = 0;
-    bool log_pasCorrect;
+    bool log_pasCorrect, incorrect;
     //QString bad = studentsDataVector[3];
-
+    User_Window *userWindow; // Окно пользователя
 
 
 

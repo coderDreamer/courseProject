@@ -141,6 +141,7 @@ public:
 
         passwordLine = new QLineEdit(Register_Form);
         passwordLine->setObjectName(QStringLiteral("passwordLine"));
+        passwordLine->setEchoMode(QLineEdit::Password);
 
         verticalLayout_2->addWidget(passwordLine);
 

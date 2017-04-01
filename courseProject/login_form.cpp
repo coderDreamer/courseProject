@@ -19,8 +19,10 @@ Login_Form::Login_Form(QWidget *parent) :
     ui->setupUi(this);
 
     ui->login_label->hide();
+    ui->login_enter_correct->hide();
 
-    // Создаем обработчик для кнопки входа
+    userWindow = new User_Window();
+
 
 
     /*====================================================================
@@ -75,9 +77,6 @@ Login_Form::Login_Form(QWidget *parent) :
 
     // вызываем ifLoginCorrect при нажатии на кнопку входа
     connect(ui->login_enter, SIGNAL (released()), this, SLOT (ifLoginCorrect()));
-
-
-
 }
     /*====================================================================
     * ---> конец Базы Данных
@@ -90,6 +89,13 @@ void Login_Form::ifLoginCorrect() {
     login_value = ui->login_field->text(); // переменные с введенными логином и паролем
     pswd_value = ui->password_field->text();
 
+    // если поля пустые...
+    if(login_value == "" || pswd_value == "") {
+        ui->login_label->setStyleSheet("font-weight: bold; color: red;");
+        ui->login_label->setText("Заполните поля");
+        ui->login_label->show();
+    }
+    else {
         // сверяем введенные данные с данными из вектора
         for(i = 0; i < studentsDataVector.size(); i++) {
             if(studentsDataVector.at(i) == login_value) {
@@ -102,22 +108,27 @@ void Login_Form::ifLoginCorrect() {
                 break;
             }
         }
-        // в зависимости от результата проверки выводим соответствующую надпись
-        if(log_pasCorrect == true) {
+    }
+    // в зависимости от результата проверки выводим соответствующую надпись
+    if(log_pasCorrect == true) {
+            ui->login_enter->hide();
+            ui->login_enter_correct->show();
             ui->login_label->setStyleSheet("font-weight: bold; color: green;");
-            ui->login_label->setText("Login and Password exist!");
+            ui->login_label->setText("Пользователь найден");
             ui->login_label->show();
-        }
-        else {
+            connect(userWindow, &User_Window::LoginWindow, this, &Login_Form::show);
+     }
+     // если неверная пара логин/пароль
+     if((log_pasCorrect != true) && (login_value != "" && pswd_value != "")) {
             ui->login_label->setStyleSheet("font-weight: bold; color: red;");
-            ui->login_label->setText("Incorrect login or password");
+            ui->login_label->setText("Неверный логин/пароль");
             ui->login_field->clear();
             ui->password_field->clear();
-            ui->login_label->show();
-        }
+           ui->login_label->show();
+     }
 
 
-        qDebug() << "Login: " << login_value << "\t" << "Password: " << pswd_value << endl; // some Debug
+     qDebug() << "Login: " << login_value << "\t" << "Password: " << pswd_value << endl; // some Debug
 
 }
 
@@ -138,4 +149,8 @@ void Login_Form::on_login_button_clicked()
 {
     this->close();
     emit WelcomeWindow();
+}
+void Login_Form::on_login_enter_correct_clicked() {
+    userWindow->show();
+    this->close();
 }
