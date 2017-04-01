@@ -20,8 +20,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -30,14 +28,12 @@ class Ui_Login_Form
 {
 public:
     QVBoxLayout *verticalLayout;
-    QSpacerItem *verticalSpacer_2;
     QFormLayout *formLayout;
     QLabel *label;
     QLineEdit *login_field;
     QLabel *label_2;
     QLineEdit *password_field;
-    QTextEdit *textEdit;
-    QSpacerItem *verticalSpacer;
+    QLabel *login_label;
     QHBoxLayout *horizontalLayout;
     QPushButton *login_button;
     QPushButton *login_enter;
@@ -49,11 +45,7 @@ public:
         Login_Form->resize(400, 300);
         verticalLayout = new QVBoxLayout(Login_Form);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(-1, -1, -1, 40);
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer_2);
-
+        verticalLayout->setContentsMargins(-1, 105, -1, 40);
         formLayout = new QFormLayout();
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setLabelAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -85,14 +77,11 @@ public:
 
         verticalLayout->addLayout(formLayout);
 
-        textEdit = new QTextEdit(Login_Form);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
+        login_label = new QLabel(Login_Form);
+        login_label->setObjectName(QStringLiteral("login_label"));
+        login_label->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(textEdit);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer);
+        verticalLayout->addWidget(login_label);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -120,6 +109,7 @@ public:
         Login_Form->setWindowTitle(QApplication::translate("Login_Form", "Dialog", 0));
         label->setText(QApplication::translate("Login_Form", "\320\233\320\276\320\263\320\270\320\275:", 0));
         label_2->setText(QApplication::translate("Login_Form", "\320\237\320\260\321\200\320\276\320\273\321\214:", 0));
+        login_label->setText(QApplication::translate("Login_Form", "TextLabel", 0));
         login_button->setText(QApplication::translate("Login_Form", "\320\235\320\260\320\267\320\260\320\264", 0));
         login_enter->setText(QApplication::translate("Login_Form", "\320\222\320\276\320\271\321\202\320\270", 0));
     } // retranslateUi

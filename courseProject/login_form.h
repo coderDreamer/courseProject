@@ -27,6 +27,8 @@ public:
                 qDebug() << "Error. Can't open the database...";
             }
     }
+     QString login_value, pswd_value;
+
 
 
 
@@ -42,13 +44,14 @@ private slots:
 
 private:
     Ui::Login_Form *ui;
-    QString login_value, pswd_value; // переменные с введенными логином и паролем
+    //QString login_value, pswd_value; // переменные с введенными логином и паролем
     // формируем запросы к БД
     //QSqlQuery *databaseQuery, *countTableStrings;
-    vector <QString> studentsDataVector = {}; // вектор, содержащий все данные из таблицы students
+    QVector <QString> studentsDataVector = {}; // вектор, содержащий все данные из таблицы students
     int db_columns = 8, i = 0, recordsNumber = 0;
-    bool loginRight, pswdRight;
+    bool log_pasCorrect;
     //QString bad = studentsDataVector[3];
+
 
 
 

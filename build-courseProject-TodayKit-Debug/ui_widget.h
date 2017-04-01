@@ -73,6 +73,7 @@ public:
         login_button = new QPushButton(Widget);
         login_button->setObjectName(QStringLiteral("login_button"));
         login_button->setAutoFillBackground(false);
+        login_button->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_2->addWidget(login_button);
 

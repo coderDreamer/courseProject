@@ -3,7 +3,8 @@
 #include <QtSql>
 #include <QString>
 #include <vector>
-#include <iostream> // delete later
+#include <iterator>
+//#include <iostream> // delete later
 #include <string>
 //#include <iterator>
 
@@ -13,11 +14,14 @@ Login_Form::Login_Form(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Login_Form)
 {
+    //setMinimumSize(250,205);
+
     ui->setupUi(this);
 
+    ui->login_label->hide();
+
     // Создаем обработчик для кнопки входа
-    login_value = ui->login_field->text(); // переменные с введенными логином и паролем
-    pswd_value = ui->password_field->text();
+
 
     /*====================================================================
     * База Данных
@@ -67,14 +71,9 @@ Login_Form::Login_Form(QWidget *parent) :
     studentsDataVector.push_back(login);
     studentsDataVector.push_back(password);
 
-
-
-    // выводим всю таблицу
-    //ui->textEdit->insertPlainText("\n" + name + " " + last_name + " " + faculty +
-                            // " " + group_name + " " + email + " " + login + " " + password + "\n");
-
     }
-    // проверка авторизации при нажатии на кнопку входа
+
+    // вызываем ifLoginCorrect при нажатии на кнопку входа
     connect(ui->login_enter, SIGNAL (released()), this, SLOT (ifLoginCorrect()));
 
 
@@ -84,33 +83,43 @@ Login_Form::Login_Form(QWidget *parent) :
     * ---> конец Базы Данных
     ====================================================================*/
 
-// надо подумать над условием проверки, над всей функцией
+// функция для авторизации(на этом этапе просто проверка)
 void Login_Form::ifLoginCorrect() {
-    //vector<QString>::iterator it = studentsDataVector.begin();
-//    for(i = 0; i < recordsNumber * db_columns; i++) { if(studentsDataVector[i] == login_value) { loginRight == true; break; }}
-//    for(i = 0; i < recordsNumber * db_columns; i++) { if(studentsDataVector[i] == pswd_value) { pswdRight == true; break; } }
 
 
-//    if(loginRight == true && pswdRight == true ) {
-//        ui->textEdit->insertPlainText("Everything is ok");
-//    }
-//    else { ui->textEdit->insertPlainText("Incorrect condition probably"); }
+    login_value = ui->login_field->text(); // переменные с введенными логином и паролем
+    pswd_value = ui->password_field->text();
 
-//   for(i = 0; i < recordsNumber * db_columns; i++) {
-//       QString newStr = studentsDataVector[i];
-//       ui->textEdit->insertPlainText(newStr + "\n");
-//   }
+        // сверяем введенные данные с данными из вектора
+        for(i = 0; i < studentsDataVector.size(); i++) {
+            if(studentsDataVector.at(i) == login_value) {
+                for(int g = 0; g < studentsDataVector.size(); g++) {
+                    if(studentsDataVector.at(g) == pswd_value) {
+                         log_pasCorrect = true;
+                         break;
+                    }
+                }
+                break;
+            }
+        }
+        // в зависимости от результата проверки выводим соответствующую надпись
+        if(log_pasCorrect == true) {
+            ui->login_label->setStyleSheet("font-weight: bold; color: green;");
+            ui->login_label->setText("Login and Password exist!");
+            ui->login_label->show();
+        }
+        else {
+            ui->login_label->setStyleSheet("font-weight: bold; color: red;");
+            ui->login_label->setText("Incorrect login or password");
+            ui->login_field->clear();
+            ui->password_field->clear();
+            ui->login_label->show();
+        }
 
-//    if(studentsDataVector.empty()) { ui->textEdit->insertPlainText("Vector is empty"); }
-//    else { ui->textEdit->insertPlainText("Vector is FULL"); }
 
-    //if(studentsDataVector[1] == "Sergey") {ui->textEdit->insertPlainText("YES!");}
-
-
-    // ВЕКТОР ЗАПОЛНЕН РАЗРОЗНЕННО. ОТТАЛКИВАЙСЯ ОТ ЭТОГО. ВЫВЕДИ ЕГО НА КОНСОЛЬ.
+        qDebug() << "Login: " << login_value << "\t" << "Password: " << pswd_value << endl; // some Debug
 
 }
-
 
 
 // функции для навигации по кнопкам
