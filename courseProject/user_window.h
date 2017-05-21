@@ -5,6 +5,7 @@
 //#include <login_form.h>
 //#include <register_form.h>
 #include <QtSql>
+#include <QString>
 
 
 namespace Ui {

@@ -13,7 +13,7 @@
     <x>0</x>
     <y>0</y>
     <width>402</width>
-    <height>686</height>
+    <height>704</height>
    </rect>
   </property>
   <property name="sizeIncrement">
@@ -123,7 +123,7 @@ font-size: 12px;</string>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QLineEdit" name="lineEdit"/>
+           <widget class="QLineEdit" name="open_q1"/>
           </item>
          </layout>
         </item>
@@ -152,10 +152,10 @@ font-size: 13px;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_2"/>
+           <widget class="QLineEdit" name="open_ver1"/>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox">
+           <widget class="QCheckBox" name="ver_check1">
             <property name="text">
              <string/>
             </property>
@@ -177,10 +177,10 @@ font-size: 13px;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_3"/>
+           <widget class="QLineEdit" name="open_ver2"/>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_2">
+           <widget class="QCheckBox" name="ver_check2">
             <property name="text">
              <string/>
             </property>
@@ -202,10 +202,10 @@ font-size: 13px;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_7"/>
+           <widget class="QLineEdit" name="open_ver3"/>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_3">
+           <widget class="QCheckBox" name="ver_check3">
             <property name="text">
              <string/>
             </property>
@@ -227,10 +227,10 @@ font-size: 13px;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_6"/>
+           <widget class="QLineEdit" name="open_ver4"/>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_4">
+           <widget class="QCheckBox" name="ver_check4">
             <property name="text">
              <string/>
             </property>
@@ -239,7 +239,7 @@ font-size: 13px;</string>
          </layout>
         </item>
         <item>
-         <widget class="QCommandLinkButton" name="commandLinkButton_3">
+         <widget class="QCommandLinkButton" name="add_open">
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
           </property>
@@ -262,6 +262,16 @@ font-size: 12px;</string>
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QLabel" name="add_condition">
+          <property name="text">
+           <string>Вопрос успешно добавлен </string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
      </item>
@@ -280,7 +290,7 @@ font-size: 12px;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_8"/>
+         <widget class="QLineEdit" name="close_q1"/>
         </item>
         <item>
          <widget class="QLabel" name="label_10">
@@ -294,10 +304,10 @@ font-size: 12px;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_9"/>
+         <widget class="QLineEdit" name="close_ver"/>
         </item>
         <item>
-         <widget class="QCommandLinkButton" name="commandLinkButton_4">
+         <widget class="QCommandLinkButton" name="add_close">
           <property name="text">
            <string>Добавить</string>
           </property>

@@ -40,32 +40,33 @@ public:
     QLabel *label_3;
     QLabel *label_11;
     QHBoxLayout *horizontalLayout;
-    QLineEdit *lineEdit;
+    QLineEdit *open_q1;
     QLabel *label_8;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_4;
-    QLineEdit *lineEdit_2;
-    QCheckBox *checkBox;
+    QLineEdit *open_ver1;
+    QCheckBox *ver_check1;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_5;
-    QLineEdit *lineEdit_3;
-    QCheckBox *checkBox_2;
+    QLineEdit *open_ver2;
+    QCheckBox *ver_check2;
     QHBoxLayout *horizontalLayout_6;
     QLabel *label_6;
-    QLineEdit *lineEdit_7;
-    QCheckBox *checkBox_3;
+    QLineEdit *open_ver3;
+    QCheckBox *ver_check3;
     QHBoxLayout *horizontalLayout_7;
     QLabel *label_7;
-    QLineEdit *lineEdit_6;
-    QCheckBox *checkBox_4;
-    QCommandLinkButton *commandLinkButton_3;
+    QLineEdit *open_ver4;
+    QCheckBox *ver_check4;
+    QCommandLinkButton *add_open;
+    QLabel *add_condition;
     QWidget *close_form_a;
     QVBoxLayout *close_form_area;
     QLabel *label_9;
-    QLineEdit *lineEdit_8;
+    QLineEdit *close_q1;
     QLabel *label_10;
-    QLineEdit *lineEdit_9;
-    QCommandLinkButton *commandLinkButton_4;
+    QLineEdit *close_ver;
+    QCommandLinkButton *add_close;
 
     void setupUi(QDialog *Add_test)
     {
@@ -73,7 +74,7 @@ public:
             Add_test->setObjectName(QStringLiteral("Add_test"));
         Add_test->setWindowModality(Qt::NonModal);
         Add_test->setEnabled(true);
-        Add_test->resize(402, 686);
+        Add_test->resize(402, 704);
         Add_test->setSizeIncrement(QSize(0, 0));
         Add_test->setStyleSheet(QStringLiteral(""));
         verticalLayout_5 = new QVBoxLayout(Add_test);
@@ -136,10 +137,10 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        lineEdit = new QLineEdit(open_form_a);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        open_q1 = new QLineEdit(open_form_a);
+        open_q1->setObjectName(QStringLiteral("open_q1"));
 
-        horizontalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(open_q1);
 
 
         open_form_area->addLayout(horizontalLayout);
@@ -160,15 +161,15 @@ public:
 
         horizontalLayout_2->addWidget(label_4);
 
-        lineEdit_2 = new QLineEdit(open_form_a);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        open_ver1 = new QLineEdit(open_form_a);
+        open_ver1->setObjectName(QStringLiteral("open_ver1"));
 
-        horizontalLayout_2->addWidget(lineEdit_2);
+        horizontalLayout_2->addWidget(open_ver1);
 
-        checkBox = new QCheckBox(open_form_a);
-        checkBox->setObjectName(QStringLiteral("checkBox"));
+        ver_check1 = new QCheckBox(open_form_a);
+        ver_check1->setObjectName(QStringLiteral("ver_check1"));
 
-        horizontalLayout_2->addWidget(checkBox);
+        horizontalLayout_2->addWidget(ver_check1);
 
 
         open_form_area->addLayout(horizontalLayout_2);
@@ -182,15 +183,15 @@ public:
 
         horizontalLayout_3->addWidget(label_5);
 
-        lineEdit_3 = new QLineEdit(open_form_a);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        open_ver2 = new QLineEdit(open_form_a);
+        open_ver2->setObjectName(QStringLiteral("open_ver2"));
 
-        horizontalLayout_3->addWidget(lineEdit_3);
+        horizontalLayout_3->addWidget(open_ver2);
 
-        checkBox_2 = new QCheckBox(open_form_a);
-        checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
+        ver_check2 = new QCheckBox(open_form_a);
+        ver_check2->setObjectName(QStringLiteral("ver_check2"));
 
-        horizontalLayout_3->addWidget(checkBox_2);
+        horizontalLayout_3->addWidget(ver_check2);
 
 
         open_form_area->addLayout(horizontalLayout_3);
@@ -204,15 +205,15 @@ public:
 
         horizontalLayout_6->addWidget(label_6);
 
-        lineEdit_7 = new QLineEdit(open_form_a);
-        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+        open_ver3 = new QLineEdit(open_form_a);
+        open_ver3->setObjectName(QStringLiteral("open_ver3"));
 
-        horizontalLayout_6->addWidget(lineEdit_7);
+        horizontalLayout_6->addWidget(open_ver3);
 
-        checkBox_3 = new QCheckBox(open_form_a);
-        checkBox_3->setObjectName(QStringLiteral("checkBox_3"));
+        ver_check3 = new QCheckBox(open_form_a);
+        ver_check3->setObjectName(QStringLiteral("ver_check3"));
 
-        horizontalLayout_6->addWidget(checkBox_3);
+        horizontalLayout_6->addWidget(ver_check3);
 
 
         open_form_area->addLayout(horizontalLayout_6);
@@ -226,30 +227,36 @@ public:
 
         horizontalLayout_7->addWidget(label_7);
 
-        lineEdit_6 = new QLineEdit(open_form_a);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        open_ver4 = new QLineEdit(open_form_a);
+        open_ver4->setObjectName(QStringLiteral("open_ver4"));
 
-        horizontalLayout_7->addWidget(lineEdit_6);
+        horizontalLayout_7->addWidget(open_ver4);
 
-        checkBox_4 = new QCheckBox(open_form_a);
-        checkBox_4->setObjectName(QStringLiteral("checkBox_4"));
+        ver_check4 = new QCheckBox(open_form_a);
+        ver_check4->setObjectName(QStringLiteral("ver_check4"));
 
-        horizontalLayout_7->addWidget(checkBox_4);
+        horizontalLayout_7->addWidget(ver_check4);
 
 
         open_form_area->addLayout(horizontalLayout_7);
 
-        commandLinkButton_3 = new QCommandLinkButton(open_form_a);
-        commandLinkButton_3->setObjectName(QStringLiteral("commandLinkButton_3"));
-        commandLinkButton_3->setLayoutDirection(Qt::LeftToRight);
-        commandLinkButton_3->setStyleSheet(QLatin1String("font-weight: bold;\n"
+        add_open = new QCommandLinkButton(open_form_a);
+        add_open->setObjectName(QStringLiteral("add_open"));
+        add_open->setLayoutDirection(Qt::LeftToRight);
+        add_open->setStyleSheet(QLatin1String("font-weight: bold;\n"
 "font-size: 12px;"));
         QIcon icon;
         icon.addFile(QString::fromUtf8("../../../\320\227\320\260\320\263\321\200\321\203\320\267\320\272\320\270/tick.png"), QSize(), QIcon::Normal, QIcon::Off);
-        commandLinkButton_3->setIcon(icon);
-        commandLinkButton_3->setCheckable(false);
+        add_open->setIcon(icon);
+        add_open->setCheckable(false);
 
-        open_form_area->addWidget(commandLinkButton_3);
+        open_form_area->addWidget(add_open);
+
+        add_condition = new QLabel(open_form_a);
+        add_condition->setObjectName(QStringLiteral("add_condition"));
+        add_condition->setAlignment(Qt::AlignCenter);
+
+        open_form_area->addWidget(add_condition);
 
 
         verticalLayout_2->addWidget(open_form_a);
@@ -265,10 +272,10 @@ public:
 
         close_form_area->addWidget(label_9);
 
-        lineEdit_8 = new QLineEdit(close_form_a);
-        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
+        close_q1 = new QLineEdit(close_form_a);
+        close_q1->setObjectName(QStringLiteral("close_q1"));
 
-        close_form_area->addWidget(lineEdit_8);
+        close_form_area->addWidget(close_q1);
 
         label_10 = new QLabel(close_form_a);
         label_10->setObjectName(QStringLiteral("label_10"));
@@ -277,16 +284,16 @@ public:
 
         close_form_area->addWidget(label_10);
 
-        lineEdit_9 = new QLineEdit(close_form_a);
-        lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
+        close_ver = new QLineEdit(close_form_a);
+        close_ver->setObjectName(QStringLiteral("close_ver"));
 
-        close_form_area->addWidget(lineEdit_9);
+        close_form_area->addWidget(close_ver);
 
-        commandLinkButton_4 = new QCommandLinkButton(close_form_a);
-        commandLinkButton_4->setObjectName(QStringLiteral("commandLinkButton_4"));
-        commandLinkButton_4->setIcon(icon);
+        add_close = new QCommandLinkButton(close_form_a);
+        add_close->setObjectName(QStringLiteral("add_close"));
+        add_close->setIcon(icon);
 
-        close_form_area->addWidget(commandLinkButton_4);
+        close_form_area->addWidget(add_close);
 
 
         verticalLayout_2->addWidget(close_form_a);
@@ -311,18 +318,19 @@ public:
         label_11->setText(QApplication::translate("Add_test", "*\320\277\321\200\320\260\320\262\320\270\320\273\321\214\320\275\321\213\320\271 \320\276\321\202\320\262\320\265\321\202 \320\276\321\202\320\274\320\265\321\207\320\260\320\265\321\202\321\201\321\217 \321\207\320\265\320\272\320\261\320\276\320\272\321\201\320\276\320\274", 0));
         label_8->setText(QApplication::translate("Add_test", "\320\222\320\260\321\200\320\270\320\260\320\275\321\202\321\213 \320\276\321\202\320\262\320\265\321\202\320\276\320\262:", 0));
         label_4->setText(QApplication::translate("Add_test", "1.", 0));
-        checkBox->setText(QString());
+        ver_check1->setText(QString());
         label_5->setText(QApplication::translate("Add_test", "2.", 0));
-        checkBox_2->setText(QString());
+        ver_check2->setText(QString());
         label_6->setText(QApplication::translate("Add_test", "3.", 0));
-        checkBox_3->setText(QString());
+        ver_check3->setText(QString());
         label_7->setText(QApplication::translate("Add_test", "4.", 0));
-        checkBox_4->setText(QString());
-        commandLinkButton_3->setText(QApplication::translate("Add_test", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", 0));
-        commandLinkButton_3->setDescription(QString());
+        ver_check4->setText(QString());
+        add_open->setText(QApplication::translate("Add_test", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", 0));
+        add_open->setDescription(QString());
+        add_condition->setText(QApplication::translate("Add_test", "\320\222\320\276\320\277\321\200\320\276\321\201 \321\203\321\201\320\277\320\265\321\210\320\275\320\276 \320\264\320\276\320\261\320\260\320\262\320\273\320\265\320\275 ", 0));
         label_9->setText(QApplication::translate("Add_test", "\320\222\320\276\320\277\321\200\320\276\321\201:", 0));
         label_10->setText(QApplication::translate("Add_test", "\320\236\321\202\320\262\320\265\321\202:", 0));
-        commandLinkButton_4->setText(QApplication::translate("Add_test", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", 0));
+        add_close->setText(QApplication::translate("Add_test", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", 0));
     } // retranslateUi
 
 };

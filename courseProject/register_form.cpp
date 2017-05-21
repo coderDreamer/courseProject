@@ -47,8 +47,6 @@ void Register_Form::on_register_button_clicked()
     // Функция для создания новой записи в таблице students
     void Register_Form::Registration() {
 
-
-
     QSqlQuery newUser_query, createTable;
     // введеные в полях значения
     QString nameValue = ui->nameLine->text(),
