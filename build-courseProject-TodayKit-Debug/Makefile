@@ -52,19 +52,23 @@ SOURCES       = ../courseProject/main.cpp \
 		../courseProject/widget.cpp \
 		../courseProject/login_form.cpp \
 		../courseProject/register_form.cpp \
-		../courseProject/user_window.cpp moc_widget.cpp \
+		../courseProject/user_window.cpp \
+		../courseProject/add_test.cpp moc_widget.cpp \
 		moc_login_form.cpp \
 		moc_register_form.cpp \
-		moc_user_window.cpp
+		moc_user_window.cpp \
+		moc_add_test.cpp
 OBJECTS       = main.o \
 		widget.o \
 		login_form.o \
 		register_form.o \
 		user_window.o \
+		add_test.o \
 		moc_widget.o \
 		moc_login_form.o \
 		moc_register_form.o \
-		moc_user_window.o
+		moc_user_window.o \
+		moc_add_test.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -126,11 +130,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../courseProject/courseProject.pro ../courseProject/widget.h \
 		../courseProject/login_form.h \
 		../courseProject/register_form.h \
-		../courseProject/user_window.h ../courseProject/main.cpp \
+		../courseProject/user_window.h \
+		../courseProject/add_test.h ../courseProject/main.cpp \
 		../courseProject/widget.cpp \
 		../courseProject/login_form.cpp \
 		../courseProject/register_form.cpp \
-		../courseProject/user_window.cpp
+		../courseProject/user_window.cpp \
+		../courseProject/add_test.cpp
 QMAKE_TARGET  = courseProject
 DESTDIR       = 
 TARGET        = courseProject
@@ -139,7 +145,7 @@ TARGET        = courseProject
 first: all
 ####### Build rules
 
-$(TARGET): ui_widget.h ui_login_form.h ui_register_form.h ui_user_window.h $(OBJECTS)  
+$(TARGET): ui_widget.h ui_login_form.h ui_register_form.h ui_user_window.h ui_add_test.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../courseProject/courseProject.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -283,9 +289,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../courseProject/widget.h ../courseProject/login_form.h ../courseProject/register_form.h ../courseProject/user_window.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../courseProject/main.cpp ../courseProject/widget.cpp ../courseProject/login_form.cpp ../courseProject/register_form.cpp ../courseProject/user_window.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../courseProject/widget.ui ../courseProject/login_form.ui ../courseProject/register_form.ui ../courseProject/user_window.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../courseProject/widget.h ../courseProject/login_form.h ../courseProject/register_form.h ../courseProject/user_window.h ../courseProject/add_test.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../courseProject/main.cpp ../courseProject/widget.cpp ../courseProject/login_form.cpp ../courseProject/register_form.cpp ../courseProject/user_window.cpp ../courseProject/add_test.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../courseProject/widget.ui ../courseProject/login_form.ui ../courseProject/register_form.ui ../courseProject/user_window.ui ../courseProject/add_test.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -310,29 +316,35 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_widget.cpp moc_login_form.cpp moc_register_form.cpp moc_user_window.cpp
+compiler_moc_header_make_all: moc_widget.cpp moc_login_form.cpp moc_register_form.cpp moc_user_window.cpp moc_add_test.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_widget.cpp moc_login_form.cpp moc_register_form.cpp moc_user_window.cpp
+	-$(DEL_FILE) moc_widget.cpp moc_login_form.cpp moc_register_form.cpp moc_user_window.cpp moc_add_test.cpp
 moc_widget.cpp: ../courseProject/login_form.h \
+		../courseProject/user_window.h \
 		../courseProject/register_form.h \
 		../courseProject/widget.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/ben/project/course/courseProject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../courseProject/widget.h -o moc_widget.cpp
 
-moc_login_form.cpp: ../courseProject/login_form.h
+moc_login_form.cpp: ../courseProject/user_window.h \
+		../courseProject/login_form.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/ben/project/course/courseProject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../courseProject/login_form.h -o moc_login_form.cpp
 
 moc_register_form.cpp: ../courseProject/login_form.h \
+		../courseProject/user_window.h \
 		../courseProject/register_form.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/ben/project/course/courseProject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../courseProject/register_form.h -o moc_register_form.cpp
 
 moc_user_window.cpp: ../courseProject/user_window.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/ben/project/course/courseProject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../courseProject/user_window.h -o moc_user_window.cpp
 
+moc_add_test.cpp: ../courseProject/add_test.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/ben/project/course/courseProject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../courseProject/add_test.h -o moc_add_test.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_widget.h ui_login_form.h ui_register_form.h ui_user_window.h
+compiler_uic_make_all: ui_widget.h ui_login_form.h ui_register_form.h ui_user_window.h ui_add_test.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_widget.h ui_login_form.h ui_register_form.h ui_user_window.h
+	-$(DEL_FILE) ui_widget.h ui_login_form.h ui_register_form.h ui_user_window.h ui_add_test.h
 ui_widget.h: ../courseProject/widget.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../courseProject/widget.ui -o ui_widget.h
 
@@ -344,6 +356,9 @@ ui_register_form.h: ../courseProject/register_form.ui
 
 ui_user_window.h: ../courseProject/user_window.ui
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../courseProject/user_window.ui -o ui_user_window.h
+
+ui_add_test.h: ../courseProject/add_test.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../courseProject/add_test.ui -o ui_add_test.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -357,27 +372,35 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 main.o: ../courseProject/main.cpp ../courseProject/widget.h \
 		../courseProject/login_form.h \
+		../courseProject/user_window.h \
 		../courseProject/register_form.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../courseProject/main.cpp
 
 widget.o: ../courseProject/widget.cpp ../courseProject/widget.h \
 		../courseProject/login_form.h \
+		../courseProject/user_window.h \
 		../courseProject/register_form.h \
 		ui_widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o ../courseProject/widget.cpp
 
 login_form.o: ../courseProject/login_form.cpp ../courseProject/login_form.h \
+		../courseProject/user_window.h \
 		ui_login_form.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login_form.o ../courseProject/login_form.cpp
 
 register_form.o: ../courseProject/register_form.cpp ../courseProject/register_form.h \
 		../courseProject/login_form.h \
+		../courseProject/user_window.h \
 		ui_register_form.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o register_form.o ../courseProject/register_form.cpp
 
 user_window.o: ../courseProject/user_window.cpp ../courseProject/user_window.h \
 		ui_user_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user_window.o ../courseProject/user_window.cpp
+
+add_test.o: ../courseProject/add_test.cpp ../courseProject/add_test.h \
+		ui_add_test.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o add_test.o ../courseProject/add_test.cpp
 
 moc_widget.o: moc_widget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_widget.o moc_widget.cpp
@@ -390,6 +413,9 @@ moc_register_form.o: moc_register_form.cpp
 
 moc_user_window.o: moc_user_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_user_window.o moc_user_window.cpp
+
+moc_add_test.o: moc_add_test.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_add_test.o moc_add_test.cpp
 
 ####### Install
 

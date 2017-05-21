@@ -33,17 +33,18 @@ public:
     QPushButton *login_button;
     QPushButton *register_button;
     QPushButton *exit_button;
+    QPushButton *edit_mode;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
-        Widget->resize(341, 260);
+        Widget->resize(337, 266);
         verticalLayout_2 = new QVBoxLayout(Widget);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(-1, 0, -1, 0);
+        verticalLayout_2->setContentsMargins(-1, 0, -1, 25);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -93,6 +94,11 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
+        edit_mode = new QPushButton(Widget);
+        edit_mode->setObjectName(QStringLiteral("edit_mode"));
+
+        verticalLayout->addWidget(edit_mode);
+
 
         verticalLayout_2->addLayout(verticalLayout);
 
@@ -104,11 +110,12 @@ public:
 
     void retranslateUi(QWidget *Widget)
     {
-        Widget->setWindowTitle(QApplication::translate("Widget", "Widget", 0));
+        Widget->setWindowTitle(QApplication::translate("Widget", "Smarter", 0));
         label->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\321\200\320\276 \320\277\320\276\320\266\320\260\320\273\320\276\320\262\320\260\321\202\321\214!", 0));
         login_button->setText(QApplication::translate("Widget", "\320\222\320\276\320\271\321\202\320\270", 0));
         register_button->setText(QApplication::translate("Widget", "\320\240\320\265\320\263\320\270\321\201\321\202\321\200\320\260\321\206\320\270\321\217", 0));
         exit_button->setText(QApplication::translate("Widget", "\320\222\321\213\321\205\320\276\320\264", 0));
+        edit_mode->setText(QApplication::translate("Widget", "Edit Mode", 0));
     } // retranslateUi
 
 };

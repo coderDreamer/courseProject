@@ -3,6 +3,9 @@
 
 #include <QDialog>
 //#include <login_form.h>
+//#include <register_form.h>
+#include <QtSql>
+
 
 namespace Ui {
 class User_Window;
@@ -16,12 +19,12 @@ public:
     explicit User_Window(QWidget *parent = 0);
     ~User_Window();
 
+
 signals:
     void LoginWindow();
 
 private:
     Ui::User_Window *ui;
-    //Login_Form loginFormObject;
 
 };
 

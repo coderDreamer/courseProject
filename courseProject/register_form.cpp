@@ -25,8 +25,6 @@ Register_Form::Register_Form(QWidget *parent) :
     // через экземпляр класса вызываем метод для соединения с БД
     loginFormObject.DataBaseConnection(); // соединение с БД
 
-
-
     connect(ui->enter_button, SIGNAL (released()), this, SLOT (Registration())); // the function below
 
 
@@ -56,19 +54,19 @@ void Register_Form::on_register_button_clicked()
     QString nameValue = ui->nameLine->text(),
             last_nameValue = ui->lastnameLine->text(),
             facultyValue = ui->facultyLine->text(),
+            groupValue = ui->groupLine->text(),
             emailValue = ui->emailLine->text(),
             loginValue = ui->loginLine->text(),
             passwordValue = ui->passwordLine->text();
 
     // вносим введенные значения полей в таблицу students
-    newUser_query.exec("INSERT INTO students (name, last_name, faculty, email, login, password) "
-                                "VALUES ('"+nameValue+"', '"+last_nameValue+"', '"+facultyValue+"', "
+    newUser_query.exec("INSERT INTO students (name, last_name, faculty, group_name, email, login, password) "
+                                "VALUES ('"+nameValue+"', '"+last_nameValue+"', '"+facultyValue+"', '"+groupValue+"', "
                                         "'"+emailValue+"', '"+loginValue+"', '"+passwordValue+"')");
 
     // проверяем, все ли поля заполнены...
-
-    if(nameValue.isEmpty() || last_nameValue.isEmpty() || facultyValue.isEmpty() || emailValue.isEmpty() ||
-                                loginValue.isEmpty() || passwordValue.isEmpty()) { // хотя бы одно пустое
+    if(nameValue.isEmpty() || last_nameValue.isEmpty() || facultyValue.isEmpty() || groupValue.isEmpty() ||
+            emailValue.isEmpty() || loginValue.isEmpty() || passwordValue.isEmpty()) { // хотя бы одно пустое
         ui->register_label->setText("Заполните все поля");
         ui->register_label->show();
     }
@@ -81,9 +79,9 @@ void Register_Form::on_register_button_clicked()
     }
     QString _USER_ = "_USER_"; // переменная для запроса
     // создаем отдельную таблицу в БД для студента с названием _USER_ЛОГИН
-    createTable.exec("CREATE TABLE '"+_USER_ +loginValue+"' ( 'id' INTEGER PRIMARY KEY "
+    createTable.exec("CREATE TABLE '"+_USER_ + loginValue+"' ( 'id' INTEGER PRIMARY KEY "
                                                          "AUTOINCREMENT, 'pswd' TEXT, 'subjects' TEXT)");
-    createTable.exec("INSERT INTO '"+_USER_ +loginValue+"' (pswd, login) VALUES ('"+passwordValue+"', '"+loginValue+"')");
+    createTable.exec("INSERT INTO '"+_USER_ + loginValue+"' (pswd, login) VALUES ('"+passwordValue+"', '"+loginValue+"')");
 
     // (!) Нужно обработать случай, когда пользователь с таким логином уже существует
 

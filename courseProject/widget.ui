@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>341</width>
-    <height>260</height>
+    <width>337</width>
+    <height>266</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Widget</string>
+   <string>Smarter</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="topMargin">
     <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>25</number>
    </property>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -108,6 +108,13 @@ font-weight: bold;</string>
         </layout>
        </item>
       </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="edit_mode">
+       <property name="text">
+        <string>Edit Mode</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

@@ -24,10 +24,12 @@ private slots:
     void on_register_button_clicked();
     void Registration();
 
+
 private:
     Ui::Register_Form *ui;
     //QString *lineName;
     Login_Form loginFormObject;
+
 };
 
 #endif // REGISTER_FORM_H

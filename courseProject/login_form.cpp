@@ -63,8 +63,9 @@ Login_Form::Login_Form(QWidget *parent) :
     QString email = databaseQuery.value(5).toString();
     QString login = databaseQuery.value(6).toString();
     QString password = databaseQuery.value(7).toString();
+    QString role = databaseQuery.value(8).toString();
 
-    // заполняем массив значениями из таблицы
+    // заполняем вектор значениями из таблицы
     studentsDataVector.push_back(name);
     studentsDataVector.push_back(last_name);
     studentsDataVector.push_back(faculty);
@@ -72,7 +73,7 @@ Login_Form::Login_Form(QWidget *parent) :
     studentsDataVector.push_back(email);
     studentsDataVector.push_back(login);
     studentsDataVector.push_back(password);
-
+    studentsDataVector.push_back(role);
     }
 
     // вызываем ifLoginCorrect при нажатии на кнопку входа
@@ -109,6 +110,7 @@ void Login_Form::ifLoginCorrect() {
             }
         }
     }
+
     // в зависимости от результата проверки выводим соответствующую надпись
     if(log_pasCorrect == true) {
             ui->login_enter->hide();

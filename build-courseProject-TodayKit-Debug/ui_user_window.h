@@ -14,9 +14,9 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -24,35 +24,32 @@ QT_BEGIN_NAMESPACE
 class Ui_User_Window
 {
 public:
-    QVBoxLayout *verticalLayout_2;
+    QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
     QLabel *label;
-    QTextEdit *textEdit;
 
     void setupUi(QDialog *User_Window)
     {
         if (User_Window->objectName().isEmpty())
             User_Window->setObjectName(QStringLiteral("User_Window"));
         User_Window->resize(400, 300);
-        User_Window->setStyleSheet(QStringLiteral("background: #dedefe;"));
-        verticalLayout_2 = new QVBoxLayout(User_Window);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(15, 15, 15, 15);
+        User_Window->setStyleSheet(QStringLiteral(""));
+        gridLayout = new QGridLayout(User_Window);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label = new QLabel(User_Window);
         label->setObjectName(QStringLiteral("label"));
-        label->setAlignment(Qt::AlignCenter);
+        label->setEnabled(true);
+        label->setStyleSheet(QLatin1String("font-weight: bold;\n"
+"font-size: 16px;"));
+        label->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
+        label->setMargin(20);
 
         verticalLayout->addWidget(label);
 
-        textEdit = new QTextEdit(User_Window);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
 
-        verticalLayout->addWidget(textEdit);
-
-
-        verticalLayout_2->addLayout(verticalLayout);
+        gridLayout->addLayout(verticalLayout, 0, 0, 1, 1);
 
 
         retranslateUi(User_Window);
@@ -62,8 +59,8 @@ public:
 
     void retranslateUi(QDialog *User_Window)
     {
-        User_Window->setWindowTitle(QApplication::translate("User_Window", "Dialog", 0));
-        label->setText(QApplication::translate("User_Window", "TextLabel", 0));
+        User_Window->setWindowTitle(QApplication::translate("User_Window", "Smarter", 0));
+        label->setText(QApplication::translate("User_Window", "\320\224\320\276\321\201\321\202\321\203\320\277\320\275\321\213\320\265 \320\277\321\200\320\265\320\264\320\274\320\265\321\202\321\213", 0));
     } // retranslateUi
 
 };
