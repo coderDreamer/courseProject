@@ -191,7 +191,7 @@ public:
 
     void retranslateUi(QDialog *Register_Form)
     {
-        Register_Form->setWindowTitle(QApplication::translate("Register_Form", "Dialog", 0));
+        Register_Form->setWindowTitle(QApplication::translate("Register_Form", "\320\240\320\265\320\263\320\270\321\201\321\202\321\200\320\260\321\206\320\270\321\217", 0));
         label->setText(QApplication::translate("Register_Form", "\320\230\320\274\321\217*:", 0));
         label_2->setText(QApplication::translate("Register_Form", "\320\244\320\260\320\274\320\270\320\273\320\270\321\217*:", 0));
         label_3->setText(QApplication::translate("Register_Form", "\320\244\320\260\320\272\321\203\320\273\321\214\321\202\320\265\321\202*:", 0));

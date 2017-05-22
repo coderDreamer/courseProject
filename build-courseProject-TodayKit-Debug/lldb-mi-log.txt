@@ -4,11 +4,11 @@ Version: GNU gdb (GDB) 7.4
 (This is a MI stub on top of LLDB and not GDB)
 All rights reserved.
 
-Creation date 0/4/117 time 16:35:36
+Creation date 1/4/117 time 14:25:14
 File logger path: lldb-mi-log.txt
-F,0/4/117 16:35:36,.
-F,0/4/117 16:35:36,Application: /usr/bin/lldb-mi-3.5
-F,0/4/117 16:35:36,Command line args: 1:'-i' 2:'mi' 3:'--tty=/tmp/QtCreator.D14555' 
-F,0/4/117 16:35:36,Driver. Using driver 'LLDB driver' internally
-F,0/4/117 16:35:36,Driver. Driver 'LLDB driver'. Parse args error 'unknown or ambiguous option'
-F,0/4/117 16:35:36,Program exited OK
+F,1/4/117 14:25:14,.
+F,1/4/117 14:25:14,Application: /usr/bin/lldb-mi-3.5
+F,1/4/117 14:25:14,Command line args: 1:'-i' 2:'mi' 3:'--tty=/tmp/QtCreator.o21428' 
+F,1/4/117 14:25:14,Driver. Using driver 'LLDB driver' internally
+F,1/4/117 14:25:14,Driver. Driver 'LLDB driver'. Parse args error 'unknown or ambiguous option'
+F,1/4/117 14:25:14,Program exited OK

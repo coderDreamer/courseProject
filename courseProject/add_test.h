@@ -4,6 +4,13 @@
 #include <QDialog>
 #include <QtSql>
 #include <QString>
+#include <string>
+#include <sstream>
+/*
+// SSTR macro для перевода int в string(используется для чекбоксов)
+#define SSTR( x ) static_cast< std::ostringstream & >( \
+      ( std::ostringstream() << std::dec << x ) ).str()
+*/
 namespace Ui {
 class Add_test;
 }
@@ -37,8 +44,8 @@ private:
     Ui::Add_test *ui;
     void add_label_success();
     void add_label_failed();
-    QString open_solution;
-    int checkbox1_value, checkbox2_value, checkbox3_value, checkbox4_value;
+    QString open_solut;
+    int checkbox_value;
 };
 
 #endif // ADD_TEST_H

@@ -113,7 +113,7 @@ public:
 
     void retranslateUi(QDialog *Login_Form)
     {
-        Login_Form->setWindowTitle(QApplication::translate("Login_Form", "Dialog", 0));
+        Login_Form->setWindowTitle(QApplication::translate("Login_Form", "\320\222\320\276\320\271\321\202\320\270", 0));
         label->setText(QApplication::translate("Login_Form", "\320\233\320\276\320\263\320\270\320\275:", 0));
         label_2->setText(QApplication::translate("Login_Form", "\320\237\320\260\321\200\320\276\320\273\321\214:", 0));
         login_label->setText(QApplication::translate("Login_Form", "TextLabel", 0));

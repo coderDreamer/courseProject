@@ -263,6 +263,7 @@ public:
 
         close_form_a = new QWidget(Add_test);
         close_form_a->setObjectName(QStringLiteral("close_form_a"));
+        close_form_a->setStyleSheet(QStringLiteral(""));
         close_form_area = new QVBoxLayout(close_form_a);
         close_form_area->setObjectName(QStringLiteral("close_form_area"));
         label_9 = new QLabel(close_form_a);

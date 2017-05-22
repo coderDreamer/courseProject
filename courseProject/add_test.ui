@@ -277,6 +277,9 @@ font-size: 12px;</string>
      </item>
      <item>
       <widget class="QWidget" name="close_form_a" native="true">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <layout class="QVBoxLayout" name="close_form_area">
         <item>
          <widget class="QLabel" name="label_9">
