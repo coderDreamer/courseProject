@@ -6,6 +6,10 @@
 #include <QtSql>
 #include <QLineEdit>
 #include <QCheckBox>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QSqlRecord>
+#include <QDebug>
 
 using namespace std;
 
@@ -14,22 +18,23 @@ Register_Form::Register_Form(QWidget *parent) :
     ui(new Ui::Register_Form)
 {
     ui->setupUi(this);
-
-
     ui->register_label->hide();
 
     /*====================================================================
-    * База Данных
+                                База Данных
     ====================================================================*/
+//    static const QString path = "/home/ben/project/course/main_database";
+//        DbManager db(path);
+    //QSqlDatabase db = QSqlDatabase::database();
 
-    // через экземпляр класса вызываем метод для соединения с БД
-    loginFormObject.DataBaseConnection(); // соединение с БД
-
-    connect(ui->enter_button, SIGNAL (released()), this, SLOT (Registration())); // the function below
+    //QSqlDatabase addUser = QSqlDatabase::database("my_db_connection");
 
 
+    connect(ui->enter_button, SIGNAL (released()), this, SLOT (Registration()));
+//    QSqlDatabase::removeDatabase("QSQLITE");
+    //db.close_db();
     /*====================================================================
-    * ---> конец Базы Данных
+                                конец Базы Данных
     ====================================================================*/
 }
 
@@ -37,7 +42,6 @@ Register_Form::~Register_Form()
 {
     delete ui;
 }
-//toPlainText();
 
 void Register_Form::on_register_button_clicked()
 {

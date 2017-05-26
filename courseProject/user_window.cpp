@@ -12,23 +12,37 @@ User_Window::User_Window(QWidget *parent) :
     setMinimumSize(350,505);
 
 
-    QSqlDatabase db;
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/ben/project/course/main_database");
-    if (!db.open()) {
-            qDebug() << "Error. Can't open the database...";
-        }
-    QSqlQuery databaseQuery;
-    databaseQuery.exec("SELECT * FROM subjects");
+    /*====================================================================
+                                База Данных
+    ====================================================================*/
+//    static const QString path = "/home/ben/project/course/main_database";
+//        DbManager db(path);
+
+    QSqlDatabase db = QSqlDatabase::database("my_db_connection");
+        QSqlQuery databaseQuery(db);
+
+//        if (db.isOpen())
+//        {
+            //QSqlQuery databaseQuery;
+            databaseQuery.exec("SELECT * FROM subjects");
 
 
-    while(databaseQuery.next()) {
-    QString subjectName = databaseQuery.value(1).toString();
-    ui->verticalLayout->addWidget(new QCommandLinkButton(subjectName, this));
-    }
+            while(databaseQuery.next()) {
+            QString subjectName = databaseQuery.value(1).toString();
+            ui->verticalLayout->addWidget(new QCommandLinkButton(subjectName, this));
+            }
+        //}
+        //else { qDebug() << "User_Window: DB error!"; }
+
+    /*====================================================================
+                               конец Базы Данных
+    ====================================================================*/
+}
 
 
-    }
+
+
+
 
 
 

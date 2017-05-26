@@ -16,7 +16,7 @@ Add_test::Add_test(QWidget *parent) :
 
     //connect(ui->enter_button, SIGNAL (released()), this, SLOT (Registration())); // the function below
     ui->add_condition->hide();
-    database_connect(); // подключение к бд
+    //database_connect(); // подключение к бд
 
     connect(ui->add_open, SIGNAL (released()), this, SLOT (add_task_open()));
     connect(ui->add_close, SIGNAL (released()), this, SLOT (add_task_close()));

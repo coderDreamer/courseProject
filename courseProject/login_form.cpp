@@ -4,9 +4,7 @@
 #include <QString>
 #include <vector>
 #include <iterator>
-//#include <iostream> // delete later
 #include <string>
-//#include <iterator>
 
 using namespace std;
 
@@ -20,67 +18,44 @@ Login_Form::Login_Form(QWidget *parent) :
 
     ui->login_label->hide();
     ui->login_enter_correct->hide();
-
     userWindow = new User_Window();
 
 
 
     /*====================================================================
-    * База Данных
+                                База Данных
     ====================================================================*/
+//    static const QString path = "/home/ben/project/course/main_database";
+//        DbManager db(path);
+    //QSqlDatabase db = QSqlDatabase::database("my_db_connection");
+        //QSqlQuery databaseQuery(db);
+
+//    QSqlQuery databaseQuery;
+//    databaseQuery.prepare("SELECT * FROM students");
+
+//        //if (db.isOpen())
+//        //{
+//           // QSqlQuery databaseQuery;
+//            //databaseQuery.exec("SELECT * FROM students");
+
+//            // обход всей таблицы
+//            while(databaseQuery.next()) {
+//            QString login = databaseQuery.value(6).toString();
+//            QString password = databaseQuery.value(7).toString();
+
+//            // заполняем вектор значениями из таблицы
+//            studentsDataVector.push_back(login);
+//            studentsDataVector.push_back(password);
+//            }
+//            // вызываем ifLoginCorrect при нажатии на кнопку входа
+//            connect(ui->login_enter, SIGNAL (released()), this, SLOT (ifLoginCorrect()));
+//        //}
 
 
-    DataBaseConnection(); // соединение с базой данных
-
-
-    QSqlQuery databaseQuery, countTableStrings;
-    databaseQuery.exec("SELECT * FROM students");
-    countTableStrings.exec("SELECT COUNT(*) FROM students"); // количество записей в таблице БД
-
-
-
-
-    //vector <QString> studentsDataVector = {};
-
-    while(countTableStrings.next()) {
-
-    QString tempRecordsNumber = countTableStrings.value(0).toString(); // the count of strings in the table
-    recordsNumber = tempRecordsNumber.toInt(); // количество строк(записей) в таблице
-
-    //ui->textEdit->setPlainText(tempRecordsNumber);
-
-    //cout << "ISSSS: " << recordsNumber * db_columns;
-    }
-
-
-    // обход всей таблицы
-    while(databaseQuery.next()) {
-    //QString id = databaseQuery.value(0).toString();
-    QString name = databaseQuery.value(1).toString();
-    QString last_name = databaseQuery.value(2).toString();
-    QString faculty = databaseQuery.value(3).toString();
-    QString group_name = databaseQuery.value(4).toString();
-    QString email = databaseQuery.value(5).toString();
-    QString login = databaseQuery.value(6).toString();
-    QString password = databaseQuery.value(7).toString();
-    QString role = databaseQuery.value(8).toString();
-
-    // заполняем вектор значениями из таблицы
-    studentsDataVector.push_back(name);
-    studentsDataVector.push_back(last_name);
-    studentsDataVector.push_back(faculty);
-    studentsDataVector.push_back(group_name);
-    studentsDataVector.push_back(email);
-    studentsDataVector.push_back(login);
-    studentsDataVector.push_back(password);
-    studentsDataVector.push_back(role);
-    }
-
-    // вызываем ifLoginCorrect при нажатии на кнопку входа
-    connect(ui->login_enter, SIGNAL (released()), this, SLOT (ifLoginCorrect()));
 }
+
     /*====================================================================
-    * ---> конец Базы Данных
+                               конец Базы Данных
     ====================================================================*/
 
 // функция для авторизации(на этом этапе просто проверка)
@@ -110,7 +85,6 @@ void Login_Form::ifLoginCorrect() {
             }
         }
     }
-
     // в зависимости от результата проверки выводим соответствующую надпись
     if(log_pasCorrect == true) {
             ui->login_enter->hide();

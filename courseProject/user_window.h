@@ -2,10 +2,9 @@
 #define USER_WINDOW_H
 
 #include <QDialog>
-//#include <login_form.h>
-//#include <register_form.h>
 #include <QtSql>
 #include <QString>
+#include <dbmanager.h>
 
 
 namespace Ui {

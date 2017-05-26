@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     login_form.cpp \
     register_form.cpp \
     user_window.cpp \
-    add_test.cpp
+    add_test.cpp \
+    dbmanager.cpp
 
 HEADERS  += widget.h \
     login_form.h \
     register_form.h \
     user_window.h \
-    add_test.h
+    add_test.h \
+    dbmanager.h
 
 FORMS    += widget.ui \
     login_form.ui \

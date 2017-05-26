@@ -53,7 +53,8 @@ SOURCES       = ../courseProject/main.cpp \
 		../courseProject/login_form.cpp \
 		../courseProject/register_form.cpp \
 		../courseProject/user_window.cpp \
-		../courseProject/add_test.cpp moc_widget.cpp \
+		../courseProject/add_test.cpp \
+		../courseProject/dbmanager.cpp moc_widget.cpp \
 		moc_login_form.cpp \
 		moc_register_form.cpp \
 		moc_user_window.cpp \
@@ -64,6 +65,7 @@ OBJECTS       = main.o \
 		register_form.o \
 		user_window.o \
 		add_test.o \
+		dbmanager.o \
 		moc_widget.o \
 		moc_login_form.o \
 		moc_register_form.o \
@@ -131,12 +133,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../courseProject/login_form.h \
 		../courseProject/register_form.h \
 		../courseProject/user_window.h \
-		../courseProject/add_test.h ../courseProject/main.cpp \
+		../courseProject/add_test.h \
+		../courseProject/dbmanager.h ../courseProject/main.cpp \
 		../courseProject/widget.cpp \
 		../courseProject/login_form.cpp \
 		../courseProject/register_form.cpp \
 		../courseProject/user_window.cpp \
-		../courseProject/add_test.cpp
+		../courseProject/add_test.cpp \
+		../courseProject/dbmanager.cpp
 QMAKE_TARGET  = courseProject
 DESTDIR       = 
 TARGET        = courseProject
@@ -289,8 +293,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../courseProject/widget.h ../courseProject/login_form.h ../courseProject/register_form.h ../courseProject/user_window.h ../courseProject/add_test.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../courseProject/main.cpp ../courseProject/widget.cpp ../courseProject/login_form.cpp ../courseProject/register_form.cpp ../courseProject/user_window.cpp ../courseProject/add_test.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../courseProject/widget.h ../courseProject/login_form.h ../courseProject/register_form.h ../courseProject/user_window.h ../courseProject/add_test.h ../courseProject/dbmanager.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../courseProject/main.cpp ../courseProject/widget.cpp ../courseProject/login_form.cpp ../courseProject/register_form.cpp ../courseProject/user_window.cpp ../courseProject/add_test.cpp ../courseProject/dbmanager.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../courseProject/widget.ui ../courseProject/login_form.ui ../courseProject/register_form.ui ../courseProject/user_window.ui ../courseProject/add_test.ui $(DISTDIR)/
 
 
@@ -322,6 +326,7 @@ compiler_moc_header_clean:
 moc_widget.cpp: ../courseProject/login_form.h \
 		../courseProject/user_window.h \
 		../courseProject/register_form.h \
+		../courseProject/add_test.h \
 		../courseProject/widget.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/ben/project/course/courseProject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../courseProject/widget.h -o moc_widget.cpp
 
@@ -373,13 +378,15 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: ../courseProject/main.cpp ../courseProject/widget.h \
 		../courseProject/login_form.h \
 		../courseProject/user_window.h \
-		../courseProject/register_form.h
+		../courseProject/register_form.h \
+		../courseProject/add_test.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../courseProject/main.cpp
 
 widget.o: ../courseProject/widget.cpp ../courseProject/widget.h \
 		../courseProject/login_form.h \
 		../courseProject/user_window.h \
 		../courseProject/register_form.h \
+		../courseProject/add_test.h \
 		ui_widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o ../courseProject/widget.cpp
 
@@ -401,6 +408,9 @@ user_window.o: ../courseProject/user_window.cpp ../courseProject/user_window.h \
 add_test.o: ../courseProject/add_test.cpp ../courseProject/add_test.h \
 		ui_add_test.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o add_test.o ../courseProject/add_test.cpp
+
+dbmanager.o: ../courseProject/dbmanager.cpp ../courseProject/dbmanager.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dbmanager.o ../courseProject/dbmanager.cpp
 
 moc_widget.o: moc_widget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_widget.o moc_widget.cpp
